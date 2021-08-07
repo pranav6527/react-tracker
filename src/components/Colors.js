@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from './Button';
-const Colors = () => {
-    const colors = [
+import Button from '../utility/Button';
+const Colors = ({flag}) => {
+    const colrs = [
         { name:'first',
          color:'red'
        },
@@ -15,12 +15,20 @@ const Colors = () => {
        {
          name:'fourth',
          color:'orange'
-       }
+       },
+       {
+        name:'fourth',
+        color:'blue'
+      }
    
+    
      ]
+
+     console.log(flag)
     return (
         <div>
-           {colors.map(color => <Button  key= {color.name} color = {color.color}>{color.name}</Button>)}  
+           {flag ? colrs.map(color => <Button  key= {color.color} color = {color.color}>{color.name} </Button>) :"no componenet to show"}
+
         </div>
     )
 }
